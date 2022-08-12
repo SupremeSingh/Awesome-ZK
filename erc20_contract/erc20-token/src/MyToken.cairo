@@ -20,7 +20,7 @@ from openzeppelin.access.ownable.library import Ownable
 #
 
 @storage_var
-func owner_to_record(public_key: felt) -> (balance: Uint256):
+func owner_to_balance(public_key: felt) -> (balance: Uint256):
 end
 
 #
@@ -130,14 +130,14 @@ func transfer{
     let (sender) = get_caller_address()
     value_transferred.emit(sender=sender, recipient=recipient, amount=amount)
 
-    let (sender_balance) = owner_to_record.read(public_key=sender)
-    let (recipient_balance) = owner_to_record.read(public_key=recipient)
+    let (sender_balance) = owner_to_balance.read(public_key=sender)
+    let (recipient_balance) = owner_to_balance.read(public_key=recipient)
 
     let (local add_low : Uint256, local add_high : felt) = uint256_add(recipient_balance, amount)
     let (local sub_low : Uint256) = uint256_sub(sender_balance, amount)
     
-    owner_to_record.write(public_key=sender, value=sub_low)
-    owner_to_record.write(public_key=recipient, value=add_low)
+    owner_to_balance.write(public_key=sender, value=sub_low)
+    owner_to_balance.write(public_key=recipient, value=add_low)
     
     ERC20.transfer(recipient, amount)
     return (TRUE)
@@ -153,14 +153,14 @@ func transferFrom{
     value_transferred.emit(sender=sender, recipient=recipient, amount=amount)
     ERC20.transfer_from(sender, recipient, amount)
 
-    let (sender_balance) = owner_to_record.read(public_key=sender)
-    let (recipient_balance) = owner_to_record.read(public_key=recipient)
+    let (sender_balance) = owner_to_balance.read(public_key=sender)
+    let (recipient_balance) = owner_to_balance.read(public_key=recipient)
 
     let (local add_low : Uint256, local add_high : felt) = uint256_add(recipient_balance, amount)
     let (local sub_low : Uint256) = uint256_sub(sender_balance, amount)
     
-    owner_to_record.write(public_key=sender, value=sub_low)
-    owner_to_record.write(public_key=recipient, value=add_low)
+    owner_to_balance.write(public_key=sender, value=sub_low)
+    owner_to_balance.write(public_key=recipient, value=add_low)
 
     return (TRUE)
 end
@@ -227,9 +227,9 @@ func mint{
     Ownable.assert_only_owner()
     tokens_minted.emit(to, amount)
 
-    let (recipient_balance) = owner_to_record.read(public_key=to)
+    let (recipient_balance) = owner_to_balance.read(public_key=to)
     let (local add_low : Uint256, local add_high : felt) = uint256_add(recipient_balance, amount)
-    owner_to_record.write(public_key=to, value=add_low)
+    owner_to_balance.write(public_key=to, value=add_low)
 
     ERC20._mint(recipient=to, amount=amount)
     return ()
