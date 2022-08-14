@@ -27,22 +27,8 @@ Once you are done here, I urge you take a look at this mental model of the ZK In
 
 Finally, I think it's important to acknowledge that in such a fast growing space - you can never know enough. The best ways to stay in touch, IMHO ... 
 
-### People
-
-- [Thor Kamphefner](https://twitter.com/cryptograthor)
-- [Eli BenSasson](https://twitter.com/EliBenSasson)
-- [Vitalik Buterin](https://twitter.com/VitalikButerin) 
-- [Uri Kolodny](https://twitter.com/ukolodny)
+Follow people like [Thor Kamphefner](https://twitter.com/cryptograthor), [Eli BenSasson](https://twitter.com/EliBenSasson), [Vitalik Buterin](https://twitter.com/VitalikButerin) (Duh !!), [Uri Kolodny](https://twitter.com/ukolodny) to get the latest and greatest. 
  
- ### Projects
- 
-- [Only Dust](https://twitter.com/OnlyDust_xyz) 
-- [NetherMind](https://twitter.com/nethermindeth)
-- [StarkWare](https://twitter.com/StarkWareLtd)
-- [Arbitrum](https://twitter.com/arbitrum)
-- [Extropy](https://twitter.com/Extropy) 
+Checkout more projects like [Only Dust](https://twitter.com/OnlyDust_xyz) , [NetherMind](https://twitter.com/nethermindeth), [StarkWare](https://twitter.com/StarkWareLtd), [Arbitrum](https://twitter.com/arbitrum), [Extropy](https://twitter.com/Extropy) and play some [Dark Forest](https://blog.zkga.me/). 
 
-### Others 
-
-- [The ZK Podcast](https://zeroknowledge.fm/)
-- [Delendum Reading](https://github.com/delendum-xyz/zk-knowledge) 
+Finally, keep reading and keep learning. There are many more elaborate resources that you should probably upgrade to once we are done here - like [The ZK Podcast](https://zeroknowledge.fm/), the [Delendum Reading List](https://github.com/delendum-xyz/zk-knowledge) and [Encode Club](https://www.encode.club/)'s ZK Hackathons and training series.  
