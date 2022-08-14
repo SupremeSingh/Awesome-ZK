@@ -3,52 +3,22 @@
 %lang starknet
 
 from starkware.cairo.common.cairo_builtins import HashBuiltin
-from starkware.starknet.common.syscalls import get_caller_address
-from starkware.cairo.common.uint256 import (
-    uint256_add,
-    uint256_sub,
-    Uint256, 
-)
-
+from starkware.cairo.common.uint256 import Uint256
 from starkware.cairo.common.bool import TRUE
 
+from starkware.starknet.common.syscalls import get_caller_address
 from openzeppelin.token.erc20.library import ERC20
 from openzeppelin.access.ownable.library import Ownable
-
-#
-# Storage
-#
-
-@storage_var
-func owner_to_balance(public_key: felt) -> (balance: Uint256):
-end
-
-#
-# Events
-#
-
-@event
-func tokens_minted(recipient : felt, amount: Uint256):
-end
-
-@event
-func value_transferred(sender: felt, recipient : felt, amount: Uint256):
-end
-
-@event
-func spender_approved(approver: felt, spender : felt, amount: Uint256):
-end
-
 
 @constructor
 func constructor{
         syscall_ptr: felt*,
         pedersen_ptr: HashBuiltin*,
         range_check_ptr
-    }(owner: felt, amount: Uint256):
+    }(owner: felt):
     ERC20.initializer('MyToken', 'MTK', 18)
     Ownable.initializer(owner)
-    ERC20._mint(owner, amount)
+    ERC20._mint(owner, Uint256(1000000000000000000000, 0))
     return ()
 end
 
@@ -126,19 +96,6 @@ func transfer{
         pedersen_ptr: HashBuiltin*,
         range_check_ptr
     }(recipient: felt, amount: Uint256) -> (success: felt):
-    alloc_locals
-    let (sender) = get_caller_address()
-    value_transferred.emit(sender=sender, recipient=recipient, amount=amount)
-
-    let (sender_balance) = owner_to_balance.read(public_key=sender)
-    let (recipient_balance) = owner_to_balance.read(public_key=recipient)
-
-    let (local add_low : Uint256, local add_high : felt) = uint256_add(recipient_balance, amount)
-    let (local sub_low : Uint256) = uint256_sub(sender_balance, amount)
-    
-    owner_to_balance.write(public_key=sender, value=sub_low)
-    owner_to_balance.write(public_key=recipient, value=add_low)
-    
     ERC20.transfer(recipient, amount)
     return (TRUE)
 end
@@ -149,19 +106,7 @@ func transferFrom{
         pedersen_ptr: HashBuiltin*,
         range_check_ptr
     }(sender: felt, recipient: felt, amount: Uint256) -> (success: felt):
-    alloc_locals
-    value_transferred.emit(sender=sender, recipient=recipient, amount=amount)
     ERC20.transfer_from(sender, recipient, amount)
-
-    let (sender_balance) = owner_to_balance.read(public_key=sender)
-    let (recipient_balance) = owner_to_balance.read(public_key=recipient)
-
-    let (local add_low : Uint256, local add_high : felt) = uint256_add(recipient_balance, amount)
-    let (local sub_low : Uint256) = uint256_sub(sender_balance, amount)
-    
-    owner_to_balance.write(public_key=sender, value=sub_low)
-    owner_to_balance.write(public_key=recipient, value=add_low)
-
     return (TRUE)
 end
 
@@ -171,8 +116,6 @@ func approve{
         pedersen_ptr: HashBuiltin*,
         range_check_ptr
     }(spender: felt, amount: Uint256) -> (success: felt):
-    let (approver) = get_caller_address()
-    spender_approved.emit(approver=approver, spender=spender, amount=amount)
     ERC20.approve(spender, amount)
     return (TRUE)
 end
@@ -223,14 +166,7 @@ func mint{
         pedersen_ptr: HashBuiltin*,
         range_check_ptr
     }(to: felt, amount: Uint256):
-    alloc_locals
     Ownable.assert_only_owner()
-    tokens_minted.emit(to, amount)
-
-    let (recipient_balance) = owner_to_balance.read(public_key=to)
-    let (local add_low : Uint256, local add_high : felt) = uint256_add(recipient_balance, amount)
-    owner_to_balance.write(public_key=to, value=add_low)
-
-    ERC20._mint(recipient=to, amount=amount)
+    ERC20._mint(to, amount)
     return ()
 end
