@@ -15,7 +15,7 @@ I wrote a few google docs to help you understand the very basic premise of what 
 
 If you are a developer, and want an absolutely bare bones example of an implementation, check out the repository folders above. 
 
-The first one is a solution set to Cairo Playground - an initiative by StarkWare to help on board developers to their ecosystem. The second one, though, is a DIY ERC-2o implementation with testing, JS integrations and lots of links to resources and cool new projects you can try out for yourself !!
+The first one is a solution set to Cairo Playground - an initiative by StarkWare to help on board developers to their ecosystem. The second one, though, is a DIY ERC-20 implementation with testing, JS integrations and lots of links to resources and cool new projects you can try out for yourself !!
 
 ## 3 - Check out some products
 
