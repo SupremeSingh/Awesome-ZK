@@ -11,6 +11,8 @@ I wrote a few google docs to help you understand the very basic premise of what 
 - [A Non Technical Primer](https://docs.google.com/document/d/11J8R8JhP2k0zlpoha4P9x4bDdkO_gVL8rcBJP9LH5pc/edit?usp=sharing)
 - [The Basic Math Being Used](https://docs.google.com/document/d/18Kbhe58G5SF0mqoF9fdMf9dMeEvqRydi_IB5FpB0u9g/edit?usp=sharing)
 
+Once through this, I suggest (mostly since I think STARKS >>>> anything else in the world) that you familarise yourself with the math behind StarkWare. [This](https://starkware.co/stark-101/) might come in handy since we will be focussing on StarkWare going forward. 
+
 ## 2 - Write some code 
 
 If you are a developer, and want an absolutely bare bones example of an implementation, check out the repository folders above. 
