@@ -17,7 +17,7 @@ Once through this, I suggest (mostly since I think STARKS >>>> anything else in 
 
 If you are a developer, and want an absolutely bare bones example of an implementation, check out the repository folders above. 
 
-The first one is a solution set to Cairo Playground - an initiative by StarkWare to help on board developers to their ecosystem. The second one, though, is a DIY ERC-20 implementation with testing, JS integrations and lots of links to resources and cool new projects you can try out for yourself !!
+The first one is a solution set to Cairo Playground - an initiative by StarkWare to help on board developers to their ecosystem. The second one, though, is a DIY ERC-20 implementation with testing, JS integrations and lots of links to resources and cool new projects you can try out for yourself !! Once you are feeling good about the general structure of this code, and want to build something from scratch, I recommend using this [template](https://github.com/sambarnes/prototype) for Protostar. 
 
 ## 3 - Check out some products
 
