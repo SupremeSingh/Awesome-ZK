@@ -126,7 +126,7 @@ Hence, if you use a hint to compute something, you must assert the computation i
 
   ## P15 - SHARP 
   
-Cairo, as opposed to ZK SNARK solutions, use a decentralized prover called SHARO. SHARP collects several programs on the STARKNet L2 and creates a proof that they ran successfully. Such a batch of programs is called a "train".
+Cairo, as opposed to ZK SNARK solutions, use a decentralized prover called SHARP. SHARP collects several programs on the STARKNet L2 and creates a proof that they ran successfully. Such a batch of programs is called a "train".
 
 Note that it may take a while until a train is created, as the service waits
 to collect enough programs (after a certain amount of time passes however, the train will be dispatched, even if it's not full). This entire process can be visualized as - 
