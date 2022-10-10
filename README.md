@@ -25,7 +25,7 @@ Once you are feeling good about the general structure of this code, and want to 
 
 I believe the best way to learn something is by doing it. I highly recommend you read the following 2 case studies on existing ZK-based offerings in the web3 market. Both of them, [ZCash](https://docs.google.com/document/d/1MPbQVGDpMXOK3u20M7VdNfT2mQnAwIZD6eMLkExYwY8/edit?usp=sharing) and [StarkNet](https://docs.google.com/document/d/11UTUyofiaAcD_qItyrA0QxGdB-UE8nt9bAFThHETsP4/edit?usp=sharing), have carved a niche for themselves and proven to be robust solutions. 
 
-Once you are done here, I urge you take a look at this [mental model](https://docs.google.com/document/d/1TvogrWp1OcwxmrFlY6Hrdx3Ega7rrwAhx6SmrJZQfFQ/edit?usp=sharing) of the ZK Industry as it exists today. Finally, do read [this interesting paper](https://fisher.wharton.upenn.edu/wp-content/uploads/2020/09/Thesis_Terrence-Jo.pdf) by the Wharton School on ZKs for a more business oriented perspective. 
+Once you are done here, I urge you take a look at this [mental model](https://docs.google.com/document/d/1TvogrWp1OcwxmrFlY6Hrdx3Ega7rrwAhx6SmrJZQfFQ/edit?usp=sharing) of the ZK Industry as it exists today. If you are looking to understand how ZKPs fit into the bigger picture of web3, I also recommend reading about [fractal scaling](https://docs.google.com/document/d/1bc1mISRogOgFKCjP6QxSbFNQxE3B5OdrHUMeJbudjIQ/edit?usp=sharing). Finally, do read [this interesting paper](https://fisher.wharton.upenn.edu/wp-content/uploads/2020/09/Thesis_Terrence-Jo.pdf) by the Wharton School on ZKs for a more business oriented perspective. 
 
 ## 4 - Get involved in the community 
 
