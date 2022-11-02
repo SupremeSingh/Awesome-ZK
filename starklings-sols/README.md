@@ -190,7 +190,9 @@ assert x = quotient * n + remainder
 
   ## P8 - Tricks 
 
-There are some useful ode optimizations and tricks worth familiarizing ourselves with in the Cairo language.
+It is useful to remember that Cairo us a non-deterministic programming language. In algorithm design, nondeterministic algorithms are often used when the problem solved by the algorithm inherently allows multiple outcomes (or when there is a single outcome with multiple paths by which the outcome may be discovered, each equally preferable). In this case, since there may always be better ways to prove the same outcome - Cairo allows us to pick a represetation that aligns most efficiently with it's instruction set and other constraints. 
+
+There are some useful code optimizations and tricks worth familiarizing ourselves with in the Cairo language.
 
 **Trick 1 - Single Line Conditionals**
 
