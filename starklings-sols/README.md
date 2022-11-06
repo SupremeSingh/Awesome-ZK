@@ -68,7 +68,7 @@ Read more about this concept [here](https://medium.com/coinmonks/storage-variabl
 
 Here, we will be working with short string literals in Cairo. Strings ?? I thought we didn't have anything but felts in Cairo. You are right - we don't. But we can always have more abstract data types that ultimately compile into felts. 
 
-Short string literals can be written into a contract as strings, hex code or literally as felts. To convert between all these data types, look for the `strings.py` file in the `utils` folder above. Essentially, this allows you to visualize one data type as another. 
+Short string literals (<= 31 characters) can be written into a contract as strings, hex code or literally as felts. To convert between all these data types, look for the `strings.py` file in the `utils` folder above. Essentially, this allows you to visualize one data type as another. 
 
 Just remember, you see the string, not Cairo or StarkNet. They only see numbers, so you can even perform arithmetic operations on strings themselves as you can tell from the solutions. 
 
