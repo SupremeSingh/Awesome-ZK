@@ -112,7 +112,26 @@ end
 ```
 and then StarkNet will basically generate a mapping under the hood between the variable name, it's value and a hash-generated address. 
 
-Finally, there are 2 ways to access a storage variables in Cairo - 
+The "key" for this mapping is created using a special variation of the much known Keccak 256 hashing function, called `starknet_keccak()`. So for instance, the access key/slot in memory where you can find the value bool will be `starknet_keccak(b'bool')`.
+
+There is additional concept of a multi-variable mapping, which can be expressed as say - 
+
+```
+@storage_var 
+func example_mapping(index:felt) -> (status:felt):
+end
+```
+
+In this case, the slot a specific key/value pair maps to will vary based on the key. So, values are deterministically assigned numbers as - 
+
+```
+mapping_key = starknet_keccak(b'example_mapping')
+location = format(pedersen_hash(mapping_key, 100)))
+```
+
+Where 100 is just a fictitious value for `index`.
+
+Finally, there are 2 ways to access a storage variables in Cairo (so you don't have to bother with the above in practice) - 
 
 - `.read()`: Allows you to get the data out of that function 
 - `.write()`: Allows you to modify state
