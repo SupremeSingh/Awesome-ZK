@@ -1,0 +1,16 @@
+["protostar.config"]
+protostar_version = "0.4.2"
+
+["protostar.project"]
+libs_path = "lib"
+
+["protostar.contracts"]
+ERC20_original = [
+    "lib/cairo_contracts/src/openzeppelin/token/erc20/presets/ERC20.cairo",
+]
+ERC20_custom = [
+    "src/contracts/ERC20Custom.cairo",
+]
+
+["protostar.shared_command_configs"]
+cairo-path = ["lib/cairo_contracts/src"]
